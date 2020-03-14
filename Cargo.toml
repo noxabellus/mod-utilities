@@ -1,0 +1,10 @@
+[package]
+name = "mod_utilities"
+description = "A collection of data structures, traits, and functions for use in mod engine / mod language"
+version = "0.1.0"
+authors = ["noxabellus <noxabellus@gmail.com>"]
+edition = "2018"
+license = "MIT"
+repository = "https://github.com/noxabellus/mod-utilities"
+homepage = "https://github.com/noxabellus/mod-utilities"
+readme = "readme.md"
