@@ -321,7 +321,7 @@ impl<K: PartialEq + Hash, V: PartialEq + Hash> BiMap<K, V> {
         let own_key = unsafe { self.keys.get_unchecked(idx) };
 
         if own_key == &key {
-          replace(unsafe { self.value_hashes.get_unchecked_mut(idx) }, value_hash);
+          let _ = replace(unsafe { self.value_hashes.get_unchecked_mut(idx) }, value_hash);
           return Some(replace(unsafe { self.values.get_unchecked_mut(idx) }, value))
         }
       }
@@ -349,7 +349,7 @@ impl<K: PartialEq + Hash, V: PartialEq + Hash> BiMap<K, V> {
         let own_value = unsafe { self.values.get_unchecked(idx) };
 
         if own_value == &value {
-          replace(unsafe { self.key_hashes.get_unchecked_mut(idx) }, key_hash);
+          let _ = replace(unsafe { self.key_hashes.get_unchecked_mut(idx) }, key_hash);
           return Some(replace(unsafe { self.keys.get_unchecked_mut(idx) }, key))
         }
       }

@@ -8,6 +8,7 @@
 
 mod take_first;
 mod discard;
+mod try_extended;
 
 mod pod;
 pub use pod::POD;
@@ -19,6 +20,9 @@ pub use unwrap_pretty::UnwrapPretty;
 
 mod unwrap_unchecked;
 pub use unwrap_unchecked::UnwrapUnchecked;
+
+mod allow_if;
+pub use allow_if::AllowIf;
 
 mod unref;
 pub use unref::Unref;
