@@ -64,6 +64,11 @@ macro_rules! make_key_type {
     #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
     $vis struct $name($crate::collections::slot_map::KeyData);
 
+    impl $name {
+      /// An uninitialized null value for a SlotMap key (the equivalent of Key::default(), but const)
+      pub const NULL: Self = Self($crate::collections::slot_map::KeyData { idx: 0, gen: 0 });
+    }
+
     impl From<$crate::collections::slot_map::KeyData> for $name {
       fn from (data: $crate::collections::slot_map::KeyData) -> Self {
         Self(data)
