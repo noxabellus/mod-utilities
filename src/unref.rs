@@ -1,20 +1,4 @@
 /// Convenience trait to extract a copy of a value referenced in an Option or Result
-/// 
-/// # Examples
-/// 
-/// The type of the unref of Option<&T> is Option<T>
-/// ```
-/// use mod_engine::util::Unref;
-/// let y = 32;
-/// let x = Some(&y);
-/// assert_eq!(x.unref(), Some(y));
-/// ```
-/// Using unref on a None yields a None
-/// ```
-/// use mod_engine::util::Unref;
-/// let z: Option<&i32> = None;
-/// assert_eq!(z.unref(), None);
-/// ```
 pub trait Unref {
   /// The inner value type of the container yielded by unref
   type Target;

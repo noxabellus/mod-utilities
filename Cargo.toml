@@ -1,7 +1,7 @@
 [package]
 name = "mod_utilities"
 description = "A collection of data structures, traits, and functions for use in mod engine / mod language"
-version = "0.1.21"
+version = "0.1.22"
 authors = ["noxabellus <noxabellus@gmail.com>"]
 edition = "2018"
 license = "MIT"

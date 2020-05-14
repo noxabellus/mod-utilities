@@ -26,6 +26,11 @@ pub struct KeyData {
   gen: u32,
 }
 
+impl KeyData {
+  /// An uninitialized null value for a KeyData (The equivalent of KeyData::default() but const)
+  pub const NULL: Self = Self { idx: 0, gen: 0 };
+}
+
 /// The data type used by SlotMaps to map from Keys to values
 #[derive(Debug, Clone)]
 pub struct Slot {
@@ -66,7 +71,8 @@ macro_rules! make_key_type {
 
     impl $name {
       /// An uninitialized null value for a SlotMap key (the equivalent of Key::default(), but const)
-      pub const NULL: Self = Self($crate::collections::slot_map::KeyData { idx: 0, gen: 0 });
+      #[allow(dead_code)]
+      pub const NULL: Self = Self($crate::collections::slot_map::KeyData::NULL);
     }
 
     impl From<$crate::collections::slot_map::KeyData> for $name {
